@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import ButtonSignin from "./ButtonSignin";
 import logo from "@/app/icon.png";
+import fulllogo from "@/app/full-logo-white.png";
 import config from "@/config";
 
 const links: {
@@ -15,16 +16,16 @@ const links: {
 }[] = [
   {
     href: "/#pricing",
-    label: "Pricing",
+    label: "Who are we?",
   },
-  {
-    href: "/#testimonials",
-    label: "Reviews",
-  },
-  {
-    href: "/#faq",
-    label: "FAQ",
-  },
+  // {
+  //   href: "/#testimonials",
+  //   label: "Reviews",
+  // },
+  // {
+  //   href: "/#faq",
+  //   label: "FAQ",
+  // },
 ];
 
 const cta: JSX.Element = <ButtonSignin extraStyle="btn-primary" />;
@@ -41,7 +42,7 @@ const Header = () => {
   }, [searchParams]);
 
   return (
-    <header className="bg-base-200">
+    <header>
       <nav
         className="container flex items-center justify-between px-8 py-4 mx-auto"
         aria-label="Global"
@@ -54,15 +55,14 @@ const Header = () => {
             title={`${config.appName} homepage`}
           >
             <Image
-              src={logo}
+              src={fulllogo}
               alt={`${config.appName} logo`}
               className="w-8"
               placeholder="blur"
               priority={true}
-              width={32}
-              height={32}
+              style={{width: "200px"}}
             />
-            <span className="font-extrabold text-lg">{config.appName}</span>
+            {/* <span className="font-extrabold text-lg">{config.appName}</span> */}
           </Link>
         </div>
         {/* Burger button to open menu on mobile */}
@@ -91,7 +91,7 @@ const Header = () => {
         </div>
 
         {/* Your links on large screens */}
-        <div className="hidden lg:flex lg:justify-center lg:gap-12 lg:items-center">
+        <div className="hidden lg:flex lg:justify-center lg:gap-12 lg:items-center text-white">
           {links.map((link) => (
             <Link
               href={link.href}

@@ -65,9 +65,8 @@ const TestimonialsAvatars = ({ priority }: { priority?: boolean }) => {
           ))}
         </div>
 
-        <div className="text-base text-base-content/80">
-          <span className="font-semibold text-base-content">32</span> makers
-          ship faster
+        <div className="text-base text-base-content/80" style={{color: "white"}}>
+          <span className="font-semibold text-base-content" style={{color: "white"}}>1000+</span> of us raised <span className="font-semibold text-base-content" style={{color: "white"}}>$500M+</span>
         </div>
       </div>
     </div>

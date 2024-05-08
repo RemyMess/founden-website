@@ -10,7 +10,7 @@ const ButtonGradient = ({
   onClick?: () => void;
 }) => {
   return (
-    <button className="btn btn-gradient animate-shimmer" onClick={onClick}>
+    <button className="btn btn-gradient animate-shimmer text-white hover:bg-yellow-300" onClick={onClick}>
       {title}
     </button>
   );

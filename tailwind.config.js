@@ -18,6 +18,33 @@ module.exports = {
         popup: "popup 0.25s ease-in-out",
         shimmer: "shimmer 3s ease-out infinite alternate",
       },
+      colors: {
+        'brand-purple': "#623cea",
+        'brand-orange': "#f58a07",
+        'brand-yellow': "#d3f930",
+        base: {
+          content: {
+            primary: 
+            {
+              dark: 
+                {
+                  open: "orange",
+                  closed: "white"
+                },
+              light: 
+                {
+                  open: "orange",
+                  closed: "dark"
+                }
+            },
+            secondary: 
+            {
+              dark: "white",
+              light: "black"
+            }
+          }
+        }
+      },
       keyframes: {
         opacity: {
           "0%": { opacity: 0 },

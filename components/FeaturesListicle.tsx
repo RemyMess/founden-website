@@ -3,6 +3,10 @@
 import { useState, useEffect, useRef } from "react";
 import type { JSX } from "react";
 
+import Image, { StaticImageData } from "next/image";
+import background from "@/app/worldwide-founden-upscale.png"
+
+
 // List of features to display:
 // - name: name of the feature
 // - description: description of the feature (can be any JSX)
@@ -458,6 +462,10 @@ const FeaturesListicle = () => {
       </div>
 
       <div>
+
+        <Image src={background}/>
+
+
         <div className="grid grid-cols-4 md:flex justify-start gap-4 md:gap-12 max-md:px-8 max-w-3xl mx-auto mb-8">
           {features.map((feature) => (
             <span

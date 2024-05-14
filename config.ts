@@ -3,7 +3,7 @@ import { ConfigProps } from "./types/config";
 
 const config = {
   // REQUIRED
-  appName: "Founden",
+  appName: "Founden - Hang out with Exceptional Founders",
   // REQUIRED: a short description of your app for SEO tags (can be overwritten)
   appDescription:
     "Curated tech community of exceptional founders & operators centred around friendships & games.",

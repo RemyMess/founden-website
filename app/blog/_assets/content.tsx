@@ -133,12 +133,12 @@ export const authors: authorType[] = [
     // The slug to use in the URL, from the authorSlugs object above.
     slug: authorSlugs.marc,
     // The name to display in the author's bio. Up to 60 characters.
-    name: "Marc Lou",
+    name: "Remy Messadene",
     // The job to display in the author's bio. Up to 60 characters.
     job: "Maker of ByeDispute",
     // The description of the author to display in the author's bio. Up to 160 characters.
     description:
-      "Marc is a developer and an entrepreneur. He's built 20 startups in the last 3 years. 6 were profitable and 3 were acquired. He's currently building ByeDispute, the #1 Stripe Chargebacks Protection tool.",
+      "Remy is a serial founder & former AI Researcher at Oxford & Imperial College London.",
     // The avatar of the author to display in the author's bio and avatar badge. It's better to use a local image, but you can also use an external image (https://...)
     avatar: marcImg,
     // A list of social links to display in the author's bio.
@@ -231,7 +231,7 @@ export const articles: articleType[] = [
           height={500}
           priority={true}
           className="rounded-box"
-          placeholder="blur"
+          // placeholder="blur"
         />
         <section>
           <h2 className={styles.h2}>Introduction</h2>

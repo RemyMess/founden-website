@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import type { JSX } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
@@ -47,6 +47,7 @@ const Header = () => {
   }, [searchParams]);
 
   return (
+    <Suspense fallback={<div>Loading...</div>}>
     <header>
       <nav
         className="container flex items-center justify-between px-8 py-4 mx-auto"
@@ -182,6 +183,7 @@ const Header = () => {
         </div>
       </div>
     </header>
+    </Suspense>
   );
 };
 

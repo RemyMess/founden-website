@@ -1,7 +1,7 @@
 "use client";
 
 import type { JSX } from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense} from "react";
 import { useSearchParams } from "next/navigation";
 import { Popover, Transition } from "@headlessui/react";
 import Link from "next/link";
@@ -153,6 +153,7 @@ const HeaderBlog = () => {
   }, [searchParams]);
 
   return (
+    <Suspense fallback={<div>Loading...</div>}>
     <header className="bg-base-200">
       <nav className="max-w-7xl flex items-center justify-between px-8 py-3 mx-auto">
         {/* Your logo/name on large screens */}
@@ -288,6 +289,7 @@ const HeaderBlog = () => {
         </div>
       </div>
     </header>
+    </Suspense>
   );
 };
 

@@ -81,7 +81,7 @@ interface FounderCardProps {
 
 const FounderCard: React.FC<FounderCardProps> = ({name, role, workDescription, profilePicture, gamesDescription }) => {
   return (
-    <div className="card card-side bg-base-100 shadow-xl h-64">
+    <div className={`card card-side bg-base-100 shadow-xl ${window.innerWidth <= 768 ? 'h-240' : 'h-64'}`}>
       <figure className="w-2/5 h-auto flex-shrink-0">
           <img src={profilePicture.src} alt={name} className="h-full w-full object-cover"/>
       </figure>
@@ -118,7 +118,7 @@ const FounderProfiles = [
     name: "Mihai Crasneanu",
     role: "Co-founder/CEO at Beem",
     profilePicture: Mihai,
-    workDescription: "Previously 2x exits (6+ digits), now raised ~$8M to build Beem, a web3 streaming platform for creators.",
+    workDescription: "Previously 2x exits (6+ digits), now raised ~$8M to build a web3 streaming platform for creators.",
     gamesDescription: "Catan & Poker player"
   },
   {
@@ -132,14 +132,14 @@ const FounderProfiles = [
     name: "Maitham Mohammed",
     role: "Co-Founder/CEO at Material10",
     profilePicture: MaithamMohammed,
-    workDescription: "Ex-Amazon & OlympusDao who raised ~2M to build games with country-level economies.",
+    workDescription: "Ex-Amazon who raised ~2M to build games with country-level economies.",
     gamesDescription: "League of Legends & Helldivers player"
   },
   {
     name: "Tom Charman",
     role: "Co-Founder/CEO at Causal",
     profilePicture: TomCharman,
-    workDescription: "2x exited founder & investor in 25+ companies, now raised 7-8 figures building synthetic browsing agents as a service",
+    workDescription: "2x exited founder & investor in 25+ companies, now raised 7-8 figures building synthetic browsing agents",
     gamesDescription: "Secret Hitler & Catan player"
   },
   {
@@ -160,7 +160,7 @@ const FounderProfiles = [
     name: "Ross Murphy",
     role: "Co-Founder/CEO at Causal",
     profilePicture: RossMurphy,
-    workDescription: "Ex-Oxford & ex-J.P Morgan trader turned dev tool founder, now bootstrapping the Vercel of RAG pipelines",
+    workDescription: "Ex-Oxford/J.P Morgan trader building the Vercel of RAG pipelines",
     gamesDescription: "Poker player, nature enthusiast"
   },
   {
@@ -216,7 +216,7 @@ const FounderProfiles = [
     name: "Eduard Oravkin",
     role: "Co-founder at Medisearch.io",
     profilePicture: EduardOravkin,
-    workDescription: "Ex-Amazon & ex-Microsoft ML researcher who interrupted his PhD to join YC to build a search engine for trustworthy medical information.",
+    workDescription: "Ex-Amazon/Microsoft ML researcher & building a YC-backed medical search engine.",
     gamesDescription: "Running, poker player"
   },
   {
@@ -255,7 +255,7 @@ export default function App() {
           <Swiper
             spaceBetween={30}
             centeredSlides={true}
-            slidesPerView={2}
+            slidesPerView={window.innerWidth <= 768 ? 1 : 2}
             loop={true}
             autoplay={{
               delay: 4000,

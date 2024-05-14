@@ -1,8 +1,8 @@
 "use client"
 
 // import '../app/customs.css';
-import Slider from 'react-infinite-logo-slider';
-
+// import Slider from 'react-infinite-logo-slider';
+import { motion } from 'framer-motion';
 import AmazonLogo from "@/app/logos/amazon.png"
 import AppleLogo from "@/app/logos/apple.png"
 import BerkeleyLogo from "@/app/logos/berkeley.png"
@@ -22,75 +22,59 @@ import OpenaiLogo from "@/app/logos/openai.png"
 import YcombinatorLogo from "@/app/logos/y-combinator.png"
 import YoutubeLogo from "@/app/logos/youtube.png"
 
-const InfiniteSliderCompanies = ({
-}: {
-}) => {
+
+
+const slides = [
+    { src: AmazonLogo.src, alt: "Amazon" },
+    { src: AppleLogo.src, alt: "Apple" },
+    { src: BerkeleyLogo.src, alt: "Berkeley" },
+    { src: CambridgeLogo.src, alt: "CambridgeLogo" },
+    // { src: DeepmindLogo.src, alt: "DeepmindLogo" },
+    { src: GoogleLogo.src, alt: "GoogleLogo" },
+    // { src: HarvardLogo.src, alt: "HarvardLogo" },
+    { src: MicrosoftLogo.src, alt: "MicrosoftLogo" },
+    { src: OxfordLogo.src, alt: "OxfordLogo" },
+    { src: RevolutLogo.src, alt: "RevolutLogo" },
+    { src: YcombinatorLogo.src, alt: "YcombinatorLogo" },
+    { src: NasaLogo.src, alt: "NasaLogo" },
+    { src: SpotifyLogo.src, alt: "SpotifyLogo" },
+    { src: StanfordLogo.src, alt: "StanfordLogo" },
+    { src: UclLogo.src, alt: "UclLogo" },
+    { src: OpenaiLogo.src, alt: "OpenaiLogo" },
+    { src: WaymoLogo.src, alt: "WaymoLogo" },
+    { src: YoutubeLogo.src, alt: "YoutubeLogo" },
+]
+ 
+const InfiniteSliderCompanies = () => {
+    const duplicatedSlides = [...slides, ...slides, ... slides, ...slides];    
+
   return (
-    <div className="justify-center overflow-hidden" style={{background: "black", height: "200px", width: "100%"}}>
-        <p className="align-content text-center text-white pt-2">Previously/currently at</p>
-        <div className="flex justify-center items-center h-full" >
-            <h1 style={{fontSize: "200px"}}>prev at</h1>
-            <Slider
-                width="200px"
-                duration={20}
-                pauseOnHover={false}
-                blurBorders={true}
-                blurBoderColor={'black'}
-            >
-                <Slider.Slide>
-                    <img src={AmazonLogo.src} alt="any" className='w-36' />
-                </Slider.Slide>
-                <Slider.Slide>
-                    <img src={AppleLogo.src} alt="any2" className='w-36' />
-                </Slider.Slide>
-                <Slider.Slide>
-                    <img src={BerkeleyLogo.src} alt="any3" className='w-36' />
-                </Slider.Slide>              
-                <Slider.Slide>
-                    <img src={DeepmindLogo.src} alt="any4" className='w-36' />
-                </Slider.Slide>
-                <Slider.Slide>
-                    <img src={CambridgeLogo.src} alt="any4" className='w-36' />
-                </Slider.Slide>
-                <Slider.Slide>
-                    <img src={GoogleLogo.src} alt="any5" className='w-36' />
-                </Slider.Slide>
-                <Slider.Slide>
-                    <img src={HarvardLogo.src} alt="any6" className='w-36' />
-                </Slider.Slide>
-                <Slider.Slide>
-                    <img src={MicrosoftLogo.src} alt="any7" className='w-36' />
-                </Slider.Slide>              
-                <Slider.Slide>
-                    <img src={OxfordLogo.src} alt="any8" className='w-36' />
-                </Slider.Slide>
-                <Slider.Slide>
-                    <img src={RevolutLogo.src} alt="any9" className='w-36' />
-                </Slider.Slide>
-                <Slider.Slide>
-                    <img src={NasaLogo.src} alt="any10" className='w-36' />
-                </Slider.Slide>
-                <Slider.Slide>
-                    <img src={SpotifyLogo.src} alt="any11" className='w-36' />
-                </Slider.Slide>              
-                <Slider.Slide>
-                    <img src={StanfordLogo.src} alt="any12" className='w-36' />
-                </Slider.Slide>
-                <Slider.Slide>
-                    <img src={WaymoLogo.src} alt="any14" className='w-36' />
-                </Slider.Slide>
-                <Slider.Slide>
-                    <img src={OpenaiLogo.src} alt="any15" className='w-36' />
-                </Slider.Slide>              
-                <Slider.Slide>
-                    <img src={YcombinatorLogo.src} alt="any16" className='w-36' />
-                </Slider.Slide>              
-                <Slider.Slide>
-                    <img src={YoutubeLogo.src} alt="any17" className='w-36' />
-                </Slider.Slide>
-            </Slider>
+        <div className="justify-center overflow-hidden" style={{background: "black", height: "100%"}}>
+            <p className="align-content text-center text-white pt-2">Previously/currently at</p>
+            <div className="flex justify-center items-center h-full" >
+                <div className="relative h-full overflow-hidden py-12 mx-auto" style={{ width: "100%" }}>
+                    <motion.div
+                        className="flex z-20"
+                        animate={{
+                            x: ['0%', '-1000%'],
+                            transition: {
+                                ease: 'linear',
+                                duration: 50,
+                                repeat: Infinity,
+                            }
+                        }}
+                    >
+                        {duplicatedSlides.map((slide, index) => (
+                            <div key={index} className="flex-shrink-0">
+                                <div className="flex items-center justify-center">
+                                    <img src={slide.src} alt={slide.alt} style={{height: "50px", marginRight: "100px"}}/>
+                                </div>
+                            </div>
+                        ))}
+                    </motion.div>
+                </div>
+            </div>
         </div>
-    </div>
   );
 };
 

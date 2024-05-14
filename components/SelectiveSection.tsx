@@ -454,7 +454,7 @@ const SelectiveSection = () => {
           </h2>
           <div className="text-base-content/80 leading-relaxed mb-8 lg:text-lg">
             {/* 💡 COPY TIP: Explain how your product delivers what you promise in the headline. */}
-            Foundeners are individuals that showed evidence of exceptional abilities (e.g. some are ex-Olympic athletes turned founders), a burning passion for tech entrepreneurship, and a kind & sociable soul. We're about quality in quantity. Less than 9% of all applicants make the cut.
+            Foundeners are individuals that showed evidence of exceptional abilities (e.g. some are ex-Olympic athletes turned founders), a burning passion for tech entrepreneurship, and a kind & sociable soul. We&apos;re about quality in quantity. Less than 9% of all applicants make the cut.
           </div>
         </div>
       </div>

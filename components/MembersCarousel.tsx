@@ -71,7 +71,15 @@ import InfiniteSliderCompanies from "@/components/InfiniteSliderCompanies"
 //   );
 // };
 
-const FounderCard = ({name, role, workDescription, profilePicture, gamesDescription }) => {
+interface FounderCardProps {
+  name: string;
+  role: string;
+  workDescription: string;
+  profilePicture: any;
+  gamesDescription: string;
+}
+
+const FounderCard: React.FC<FounderCardProps> = ({name, role, workDescription, profilePicture, gamesDescription }) => {
   return (
     <div className="card card-side bg-base-100 shadow-xl h-64">
       <figure className="w-2/5 h-auto flex-shrink-0">
@@ -241,7 +249,7 @@ export default function App() {
       id="features">
 
         <h2 className="funky-title text-brand-yellow font-extrabold text-4xl lg:text-5xl tracking-tight mb-6 md:mb-24 text-center">
-              We're ambitious founders with insane backgrounds.
+              We&apos;re ambitious founders with insane backgrounds.
               {/* <span className="bg-neutral text-neutral-content px-2 leading-snug md:px-4 ml-0 md:ml-1.5 leading-relaxed whitespace-nowrap">
                 during the day
               </span> */}
@@ -270,7 +278,7 @@ export default function App() {
             style={{height: "300px"}}
           >
             {FounderProfiles.map((profile, i) => (
-              <SwiperSlide>
+              <SwiperSlide key={i}>
                   <FounderCard
                     name={profile.name}
                     role={profile.role}

@@ -7,7 +7,6 @@ import backgroundImg from "@/app/background.jpg"
 import ButtonGradient from "@/components/ButtonGradient";
 import TextTransition, { presets } from 'react-text-transition';
 import ButtonLead from "@/components/ButtonLead";
-import Globe from './Globe'
 
 import globalFoundenImg from "@/app/worldwide-founden.svg"
 

@@ -226,19 +226,12 @@ const FounderProfiles = [
     workDescription: "Imperial College & YC alumnus who raised $6M to build the most productive browser.",
     gamesDescription: "Video games, boardgames, poker, foody"
   },
-
-
-
-
 ]
-
-
-
 
 export default function App() {
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
-  const onAutoplayTimeLeft = (s, time, progress) => {
+  const onAutoplayTimeLeft = (s: typeof Swiper, time: number, progress: number) => {
     progressCircle.current.style.setProperty('--progress', 1 - progress);
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
@@ -273,7 +266,7 @@ export default function App() {
             }}
             navigation={true}
             modules={[Autoplay, Pagination, Navigation]}
-            onAutoplayTimeLeft={onAutoplayTimeLeft}
+            // onAutoplayTimeLeft={onAutoplayTimeLeft}
             className="mySwiper"
             style={{height: "300px"}}
           >

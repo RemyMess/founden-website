@@ -15,6 +15,24 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 import AmazonLogo from "@/app/logos/amazon.png"
 
+import LukasKoebis from "@/app/foundersProfilePic/lukas.jpeg"
+import MaithamMohammed from "@/app/foundersProfilePic/maitham.jpeg"
+import RossMurphy from "@/app/foundersProfilePic/ross.jpeg"
+import Ilia from "@/app/foundersProfilePic/ilia.jpeg"
+import TomCharman from "@/app/foundersProfilePic/tomcharman.jpeg"
+import EmmaPetsolari from "@/app/foundersProfilePic/emma.jpeg"
+import Mihai from "@/app/foundersProfilePic/mihai.jpeg"
+import AndreaGuariglia from "@/app/foundersProfilePic/andrea.jpeg"
+import JosefChen from "@/app/foundersProfilePic/josefchen.jpeg"
+import BrettCotten from "@/app/foundersProfilePic/brett.png"
+import Miraan from "@/app/foundersProfilePic/miraan.jpeg"
+import MertDeveci from "@/app/foundersProfilePic/mert.jpeg"
+import EduardOravkin from "@/app/foundersProfilePic/edo.jpeg"
+import Saurav from "@/app/foundersProfilePic/saurav.jpg"
+import Farrah from "@/app/foundersProfilePic/farrah.png"
+import SophiaRahman from "@/app/foundersProfilePic/sophia.png"
+
+
 
 import InfiniteSliderCompanies from "@/components/InfiniteSliderCompanies"
 
@@ -53,6 +71,159 @@ import InfiniteSliderCompanies from "@/components/InfiniteSliderCompanies"
 //   );
 // };
 
+const FounderCard = ({name, role, workDescription, profilePicture, gamesDescription }) => {
+  return (
+    <div className="card card-side bg-base-100 shadow-xl h-64">
+      <figure className="w-2/5 h-auto flex-shrink-0">
+          <img src={profilePicture.src} alt={name} className="h-full w-full object-cover"/>
+      </figure>
+      <div className="card-body">
+          <h2 className="card-title text-md">{name}</h2>
+          <p className="text-base sm:font-semibold">{role}</p>
+          <p className="text-sm">
+            <b className="text-brand-purple">By day: </b>{workDescription}
+          </p>
+          <p className="text-sm">
+            <b className="text-brand-orange">By night: </b>{gamesDescription}
+          </p>
+
+          {/* <div className="flex   justify-end items-end space-x-2 h-2">
+              <img src={AmazonLogo.src} alt="Logo 1" style={{ height: '20px' }} className="object-contain"/>
+              <img src="logo2.png" alt="Logo 2"  style={{ height: '50px' }}className="object-contain"/>
+              <img src="logo3.png" alt="Logo 3"  style={{ height: '50px' }} className="object-contain"/>
+          </div> */}
+
+      </div>
+    </div>
+  )
+}
+
+const FounderProfiles = [
+  {
+    name: "Lukas Koebis",
+    role: "Co-Founder/CTO at Causal",
+    profilePicture: LukasKoebis,
+    workDescription: "Ex-Oxford grad & WhatsApp SWE who raised 20M to build the future of spreadsheet.",
+    gamesDescription: "Catan & Poker player"
+  },
+  {
+    name: "Mihai Crasneanu",
+    role: "Co-founder/CEO at Beem",
+    profilePicture: Mihai,
+    workDescription: "Previously 2x exits (6+ digits), now raised ~$8M to build Beem, a web3 streaming platform for creators.",
+    gamesDescription: "Catan & Poker player"
+  },
+  {
+    name: "Emmanuella Petsolari",
+    role: "Co-Founder/CEO at Stealth",
+    profilePicture: EmmaPetsolari,
+    workDescription: "Built & raised in stealth for a biotech startup while doing her PhD at Cambridge.",
+    gamesDescription: "VR/AR games, boardgames"
+  },
+  {
+    name: "Maitham Mohammed",
+    role: "Co-Founder/CEO at Material10",
+    profilePicture: MaithamMohammed,
+    workDescription: "Ex-Amazon & OlympusDao who raised ~2M to build games with country-level economies.",
+    gamesDescription: "League of Legends & Helldivers player"
+  },
+  {
+    name: "Tom Charman",
+    role: "Co-Founder/CEO at Causal",
+    profilePicture: TomCharman,
+    workDescription: "2x exited founder & investor in 25+ companies, now raised 7-8 figures building synthetic browsing agents as a service",
+    gamesDescription: "Secret Hitler & Catan player"
+  },
+  {
+    name: "Farrah Barber",
+    role: "Co-Founder/CEO at Science Folk",
+    profilePicture: Farrah,
+    workDescription: "Ex-McKinsey/Goldman/UN IGF/EF building the new marketplace for STEM talents.",
+    gamesDescription: "VR/AR games, boardgames"
+  },
+  {
+    name: "Josef Chen",
+    role: "Co-founder at Kaikaku",
+    profilePicture: JosefChen,
+    workDescription: "2x exited founder, now building robotic restaurants with the Ex-CDO of Subway, Ex-CSO of Mars Inc, & Ex-MD of Caffè Nero.",
+    gamesDescription: "Foody"
+  },
+  {
+    name: "Ross Murphy",
+    role: "Co-Founder/CEO at Causal",
+    profilePicture: RossMurphy,
+    workDescription: "Ex-Oxford & ex-J.P Morgan trader turned dev tool founder, now bootstrapping the Vercel of RAG pipelines",
+    gamesDescription: "Poker player, nature enthusiast"
+  },
+  {
+    name: "Andrea Guariglia",
+    role: "Co-founder at Angry Monk",
+    profilePicture: AndreaGuariglia,
+    workDescription: "Ex-Oxford who founded a profitable UK business (now board-member). Now McKinsey consultant planning his next venture.",
+    gamesDescription: "Running, poker player"
+  },
+  {
+    name: "Brett Cotten",
+    role: "Co-founder/CEO at Arda Biomaterials",
+    profilePicture: BrettCotten,
+    workDescription: "Ex-Cambridge grad, EF alumnus, book author who raised ~$2M to tranform beer waste into leather.",
+    gamesDescription: "xxxxx"
+  },
+  {
+    name: "Sophia Rahman",
+    role: "Co-founder/CEO at Stealth",
+    profilePicture: SophiaRahman,
+    workDescription: "Ex-Cambridge grad who recently raised 7 digits in stealth 🤫.",
+    gamesDescription: "xxxxx"
+  },
+  {
+    name: "Miraan Tabrez",
+    role: "Co-founder at Hypertune",
+    profilePicture: Miraan,
+    workDescription: "Ex-Improbable & Meta SWE now building the future of feature flag, A/B testing, and app analytics.",
+    gamesDescription: "Poker player"
+  },
+  {
+    name: "Mert Deveci",
+    role: "Co-founder at GodmodeHQ.com",
+    profilePicture: MertDeveci,
+    workDescription: "Ex-Morgan Stanley banker who raised $3M to build the sales AI for modern teams",
+    gamesDescription: "Poker player"
+  },
+  // {
+  //   name: "Bobby Abdullah",
+  //   role: "Co-founder at Angry Monk",
+  //   profilePicture: AndreaGuariglia,
+  //   workDescription: "Previously an Oxford grad turned founder of a profitable business (now board member). Now McKinsey consultant planning his next venture.",
+  //   gamesDescription: "Running, poker player"
+  // },
+  // {
+  //   name: "Nathan Lucaussy",
+  //   role: "Co-founder at Angry Monk",
+  //   profilePicture: AndreaGuariglia,
+  //   workDescription: "Previously an Oxford grad turned founder of a profitable business (now board member). Now McKinsey consultant planning his next venture.",
+  //   gamesDescription: "Running, poker player"
+  // },
+  {
+    name: "Eduard Oravkin",
+    role: "Co-founder at Medisearch.io",
+    profilePicture: EduardOravkin,
+    workDescription: "Ex-Amazon & ex-Microsoft ML researcher who interrupted his PhD to join YC to build a search engine for trustworthy medical information.",
+    gamesDescription: "Running, poker player"
+  },
+  {
+    name: "Saurav Mitra",
+    role: "Co-founder/CTO at SigmaOS",
+    profilePicture: Saurav,
+    workDescription: "Imperial College & YC alumnus who raised $6M to build the most productive browser.",
+    gamesDescription: "Video games, boardgames, poker, foody"
+  },
+
+
+
+
+]
+
 
 
 
@@ -70,19 +241,23 @@ export default function App() {
       id="features">
 
         <h2 className="funky-title text-brand-yellow font-extrabold text-4xl lg:text-5xl tracking-tight mb-6 md:mb-24 text-center">
-              We're ambitious founders with insane backgrounds…
+              We're ambitious founders with insane backgrounds.
               {/* <span className="bg-neutral text-neutral-content px-2 leading-snug md:px-4 ml-0 md:ml-1.5 leading-relaxed whitespace-nowrap">
                 during the day
               </span> */}
             </h2>
+              {/* <p className="text-white text-center">Foundeners are individuals that showed evidence of exceptional abilities (e.g. some are ex-Olympic athletes turned founders), a burning passion for tech entrepreneurship, and a kind & sociable soul. We're about quality in quantity. Less than 9% of all applicants make the cut.</p> */}
 
         <div className="px-8">
+
+
           <Swiper
             spaceBetween={30}
             centeredSlides={true}
             slidesPerView={2}
+            loop={true}
             autoplay={{
-              delay: 3000,
+              delay: 4000,
               disableOnInteraction: false,
             }}
             pagination={{
@@ -94,46 +269,18 @@ export default function App() {
             className="mySwiper"
             style={{height: "300px"}}
           >
-
-
-            
-            <SwiperSlide>
-
-              
-              text
-
-
-            </SwiperSlide>
-
-
-            <SwiperSlide>
-
-            <div className="card card-side bg-base-100 shadow-xl">
-                  <figure className="w-1/2 h-auto flex-shrink-0">
-                      <img src="https://media.licdn.com/dms/image/C5603AQFa8M6jnObC8w/profile-displayphoto-shrink_800_800/0/1551726036914?e=1720656000&v=beta&t=1PklIqfQX03k6Gt4w0FVNoQ3G5lb6Ec1oE9XAlN9etM" alt="Lukas Koebis" className="h-full w-full object-cover"/>
-                  </figure>
-                  <div className="card-body">
-                      <h2 className="card-title text-xl">Lukas Koebis</h2>
-                      <p className="text-base md:font-semibold">Co-founder/CTO of Causal</p>
-                      <p className="text-sm">"I bootstrapped a DTC company to $5M in 3 years. Nearly $100M in revenue."</p>
-
-                      <div className="flex justify-end items-end space-x-2 h-2">
-                          <img src={AmazonLogo.src} alt="Logo 1" style={{ height: '20px' }} className="object-contain"/>
-                          <img src="logo2.png" alt="Logo 2"  style={{ height: '50px' }}className="object-contain"/>
-                          <img src="logo3.png" alt="Logo 3"  style={{ height: '50px' }} className="object-contain"/>
-                      </div>
-
-                  </div>
-              </div>
-
-            </SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
-            {/* <SwiperSlide>Slide 4</SwiperSlide>
-            <SwiperSlide>Slide 5</SwiperSlide>
-            <SwiperSlide>Slide 6</SwiperSlide>
-            <SwiperSlide>Slide 7</SwiperSlide>
-            <SwiperSlide>Slide 8</SwiperSlide>
-            <SwiperSlide>Slide 9</SwiperSlide> */}
+            {FounderProfiles.map((profile, i) => (
+              <SwiperSlide>
+                  <FounderCard
+                    name={profile.name}
+                    role={profile.role}
+                    profilePicture={profile.profilePicture}
+                    workDescription={profile.workDescription}
+                    gamesDescription={profile.gamesDescription}
+                  />
+                </SwiperSlide>
+              ))
+            }
             <div className="autoplay-progress" slot="container-end">
               <svg viewBox="0 0 48 48" ref={progressCircle}>
                 <circle cx="24" cy="24" r="20"></circle>

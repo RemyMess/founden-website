@@ -5,6 +5,11 @@ import type { JSX } from "react";
 import Image from "next/image";
 
 import background from "@/app/backgrounds/background3.png"
+import globalFoundenEvents from "@/app/worldwide-founden.svg"
+import retreatFoundenImage from "@/app/Retreat Images.svg"
+
+// import pokerVideo from "@/app/poker.mp4"
+import discordImageFounden from "@/app/discord-gaming.svg"
 
 
 interface Feature {
@@ -26,11 +31,13 @@ interface Feature {
 // - alt: The alt text of the image (if type is 'image')
 const features = [
   {
-    title: "We play video games",
+    title: "We recharge & play games online",
     description:
-      "Send transactional emails, setup your DNS to avoid spam folder (DKIM, DMARC, SPF in subdomain), and listen to webhook to receive & forward emails",
-    type: "video",
-    path: "https://d3m8mk7e1mf7xn.cloudfront.net/app/newsletter.webm",
+      "Want to relax your mind & play a video game (e.g League of Legends) with likeminded fellows? We got you 24/7. Jump in our online gaming room (aka Discord server) and you'll find us recharging.",
+    type: "image",
+    // path: "https://d3m8mk7e1mf7xn.cloudfront.net/app/newsletter.webm",
+    // path: foodAndGymVideo,
+    path: discordImageFounden.src,
     format: "video/webm",
     svg: (
       <svg
@@ -51,9 +58,10 @@ const features = [
   {
     title: "We play poker & board-games",
     description:
-      "Gaming Room - we play Colonist.io, ",
-    type: "image",
-    path: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
+      "The dominating majority of us are suckers for boardgames & poker. We play both online & IRL, wherever Foundeners are!",
+    type: "video",
+    format: "video/webm",
+    path: "https://file.notion.so/f/f/8be72a2f-3d52-4dcc-8d3b-c86624d1b2f6/4eac4ddf-5838-4310-8597-f2a632cd2ced/poker.mp4?id=d6ff5b75-5b7c-4c04-a6d0-84a150c2239a&table=block&spaceId=8be72a2f-3d52-4dcc-8d3b-c86624d1b2f6&expirationTimestamp=1715709600000&signature=91KgwOtrjFnSYtZwlQiZu0QXCEj4PytCiO6eLgAFSWM",
     alt: "A computer",
     svg: (
       <svg
@@ -73,9 +81,13 @@ const features = [
     ),
   },
   {
-    title: "We attend IRL events together",
+    title: "We do cultural excursions",
     description:
-      "Magic links setup, login with Google walkthrough, save user in MongoDB/Supabase, private/protected pages & API calls",
+      "Restaurants, VR games, comedy, pubs - anything any of us fancy trying in the city, we give it a go!",
+    type: "video",
+    format: "video/webm",
+    path: "https://file.notion.so/f/f/8be72a2f-3d52-4dcc-8d3b-c86624d1b2f6/cff88ae2-f3b5-47c4-a0f6-cc87969182c9/equinox-out-video.webm?id=ffb8299c-d4ca-4789-825e-3bfb8760c0fc&table=block&spaceId=8be72a2f-3d52-4dcc-8d3b-c86624d1b2f6&expirationTimestamp=1715709600000&signature=L1c4GLO8ilsvroI80ECIRkBd2c67OFunns1T0IMyWE0",
+    alt: "A computer",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -94,9 +106,12 @@ const features = [
     ),
   },
   {
-    title: "We go to Founders' Retreats",
+    title: "We retreat from tech to nature",
     description:
-      "Components, animations & sections (like this features section), 20+ themes with daisyUI, automatic dark mode",
+      "Last Summer, we've rented a huge chalet in the French Alpes for 1 week. On the menu: freshly cooked food, hikes in the mountains, alone time in the morning, meditation, & boardgames!",
+    path: retreatFoundenImage,
+    type: "image",
+    alt: "retreat image",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -179,12 +194,12 @@ const Media = ({ feature }: { feature: Feature }) => {
   if (type === "video") {
     return (
       <video
-        className={style}
+        className={style + "rounded-full"}
         autoPlay
         muted
         loop
         playsInline
-        controls
+        // controls
         width={size.width}
         height={size.height}
       >
@@ -196,12 +211,23 @@ const Media = ({ feature }: { feature: Feature }) => {
       <Image
         src={path}
         alt={alt}
-        className={`${style} object-cover object-center`}
+        className={`${style} object-cover object-center w-full h-full object-contain`}
         width={size.width}
         height={size.height}
       />
     );
-  } else {
+  } else if (type == "hacking_image"){
+    return (
+      <Image
+      src={path}
+      alt={alt}
+      className={`${style} object-cover object-center w-full h-full object-contain overflow-visible p-10`}
+      width={size.width}
+      height={size.height}
+    />
+  );
+  } else
+    {
     return <div className={`${style} !border-none`}></div>;
   }
 };
@@ -220,7 +246,7 @@ const FeaturesAccordionRight = () => {
         >
             <div className="px-8 text-right">
                 <h2 className="funky-title text-brand-orange font-extrabold text-4xl lg:text-5xl tracking-tight mb-6 md:mb-24">
-                ... and hanging out  
+                ... and play harder together
                 <div><b>during the night.</b></div>
                 </h2>
                 <div className=" flex flex-col md:flex-row-reverse gap-12 md:gap-24">

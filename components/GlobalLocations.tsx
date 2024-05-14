@@ -394,7 +394,7 @@ const features: {
 // - Click on a feature to display its description.
 // - Good to use when multiples features are available.
 // - Autoscroll the list of features (optional).
-const FeaturesListicle = () => {
+const GlobalLocations = () => {
   const featuresEndRef = useRef<null>(null);
   const [featureSelected, setFeatureSelected] = useState<string>(
     features[0].name
@@ -448,23 +448,25 @@ const FeaturesListicle = () => {
             {/* Pure decoration, you can remove it */}
             {/* const launch_time = &quot;Today&quot;; */}
           </p>
-          <h2 className="font-extrabold text-3xl lg:text-5xl tracking-tight mb-8">
+          <h2 className="font-extrabold text-3xl lg:text-5xl tracking-tight mb-8 funky-title text-left">
             {/* 💡 COPY TIP: Remind visitors about the value of your product. Why do they need it? */}
-            We're global
+            We're global...
           </h2>
           <div className="text-base-content/80 leading-relaxed mb-8 lg:text-lg">
             {/* 💡 COPY TIP: Explain how your product delivers what you promise in the headline. */}
-            Login users, process payments and send emails at lightspeed. Spend
-            your time building your startup, not integrating APIs. ShipFast
-            provides you with the boilerplate code you need to launch, FAST.
+            Foundeners are individuals that showed evidence of exceptional abilities (e.g. some are ex-Olympic athletes turned founders), a burning passion for tech entrepreneurship, and a kind & sociable soul. We're about quality in quantity. Less than 9% of all applicants make the cut.
           </div>
         </div>
       </div>
 
+
       <div>
+        <div className="flex justify-center items-center">
 
-        <Image src={background}/>
+          <img className="center" src={background.src}/>
+        </div>
 
+{/* 
 
         <div className="grid grid-cols-4 md:flex justify-start gap-4 md:gap-12 max-md:px-8 max-w-3xl mx-auto mb-8">
           {features.map((feature) => (
@@ -510,7 +512,10 @@ const FeaturesListicle = () => {
               {features.find((f) => f.name === featureSelected)["description"]}
             </div>
           </div>
-        </div>
+        </div> */}
+
+
+        
       </div>
       {/* Just used to know it's the end of the autoscroll feature (optional, see useEffect) */}
       <p className="opacity-0" ref={featuresEndRef}></p>
@@ -518,4 +523,4 @@ const FeaturesListicle = () => {
   );
 };
 
-export default FeaturesListicle;
+export default GlobalLocations;

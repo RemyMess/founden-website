@@ -4,6 +4,10 @@ import { useState, useRef } from "react";
 import type { JSX } from "react";
 import Image from "next/image";
 import background from "@/app/backgrounds/background5.png"
+import SlackFounden from "@/app/slackFounden.png"
+import worldSpinningGif from "@/app/World spinning.gif"
+import notificationsIncreasingGif from "@/app/Received animation.gif"
+import acquisitionImage from "@/app/acquisitionImage.svg"
 
 interface Feature {
   title: string;
@@ -24,11 +28,34 @@ interface Feature {
 // - alt: The alt text of the image (if type is 'image')
 const features = [
   {
-    title: "We signed a pact to help each other",
+    title: "We are experts ready to answer any questions.",
+    path: acquisitionImage.src,
+    type: "image",
     description:
-      "The Founden pact is all about unity to empower each other - if you win, we win. If we win, you win.",
+      "All members are experts in one niche: some have even been through the pains of scaling it to 8 figures ARR & managing their exit - they'll happily help!",
+    svg: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className="w-6 h-6"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "We want you to succeed.",
+    description:
+      "We've all signed the Founden pact - a promise to empower each other to get them closer to success. A win for one of us = a new resource for everybody else.",
     type: "video",
-    path: "https://d3m8mk7e1mf7xn.cloudfront.net/app/newsletter.webm",
+    path: "https://file.notion.so/f/f/8be72a2f-3d52-4dcc-8d3b-c86624d1b2f6/1368f3aa-c2d5-4dbf-a5e9-8fb75afe951a/Untitled.mp4?id=f41568be-35f5-4709-89aa-6c193a561094&table=block&spaceId=8be72a2f-3d52-4dcc-8d3b-c86624d1b2f6&expirationTimestamp=1715716800000&signature=ZkrhCZ3tCqS5cS98uIIyQBaacmNGV-PcIgYIKpuewkc",
     format: "video/webm",
     svg: (
       <svg
@@ -47,11 +74,11 @@ const features = [
     ),
   },
   {
-    title: "Join your niche & get expert",
+    title: "We're hyping & outworking each other.",
     description:
-      "Global Private Slack to connect with people from any niche - crypto, biotech, SaaS, you call it!",
+      "24/7 access to an electric Global Private Slack with hungry exceptional founders with unbounded ambition - if you want a kick to push yourself, you'll get it!",
     type: "image",
-    path: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
+    path: SlackFounden.src,
     alt: "A computer",
     svg: (
       <svg
@@ -70,48 +97,29 @@ const features = [
       </svg>
     ),
   },
-  {
-    title: "Get warm-intros to the right people",
-    description:
-      "Many member have exited their businesses or scaled it to several millions ARR - they'll happily answer!",
-    svg: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={1.5}
-        stroke="currentColor"
-        className="w-6 h-6"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
-        />
-      </svg>
-    ),
-  },
-  {
-    title: "Get discounted softwares",
-    description:
-      "Stack are regularly debated in Founden - not only you hear from fellow founders about their experience but also discounts for most of the favourites.",
-    svg: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={1.5}
-        stroke="currentColor"
-        className="w-6 h-6"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"
-        />
-      </svg>
-    ),
-  },
+  // {
+  //   title: "We share our networks with each other.",
+  //   type: "image",
+  //   path: notificationsIncreasingGif,
+  //   description:
+  //     "Our cumulative network is massive: angels, VC funds, talents, Fortune 500... - you call it! If we see the potential of a win-win relationship to happen, we won't hesitate to warm-intro you!",
+  //   svg: (
+  //     <svg
+  //       xmlns="http://www.w3.org/2000/svg"
+  //       fill="none"
+  //       viewBox="0 0 24 24"
+  //       strokeWidth={1.5}
+  //       stroke="currentColor"
+  //       className="w-6 h-6"
+  //     >
+  //       <path
+  //         strokeLinecap="round"
+  //         strokeLinejoin="round"
+  //         d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+  //       />
+  //     </svg>
+  //   ),
+  // }
 ] as Feature[];
 
 // An SEO-friendly accordion component including the title and a description (when clicked.)
@@ -183,7 +191,7 @@ const Media = ({ feature }: { feature: Feature }) => {
         muted
         loop
         playsInline
-        controls
+        // controls
         width={size.width}
         height={size.height}
       >
@@ -220,7 +228,7 @@ const FeaturesAccordion = () => {
       >
         <div className="px-8">
           <h2 className="funky-title text-brand-purple font-extrabold text-4xl lg:text-5xl tracking-tight mb-6 md:mb-24">
-            ... giving each other unfair advantages  
+            We work harder together
             <div><b>during the day...</b></div>
             {/* <span className="bg-neutral text-neutral-content px-2 leading-snug md:px-4 ml-0 md:ml-1.5 leading-relaxed whitespace-nowrap">
               during the day

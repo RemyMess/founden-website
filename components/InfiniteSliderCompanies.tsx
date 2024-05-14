@@ -26,66 +26,70 @@ const InfiniteSliderCompanies = ({
 }: {
 }) => {
   return (
-    <div className="flex justify-center items-center h-full" style={{background: "black", height: "100px"}} >
-        <Slider
-              width="200px"
-              duration={20}
-              pauseOnHover={false}
-              blurBorders={true}
-              blurBoderColor={'#fff'}
-          >
-              <Slider.Slide>
-                  <img src={AmazonLogo.src} alt="any" className='w-36' />
-              </Slider.Slide>
-              <Slider.Slide>
-                  <img src={AppleLogo.src} alt="any2" className='w-36' />
-              </Slider.Slide>
-              <Slider.Slide>
-                  <img src={BerkeleyLogo.src} alt="any3" className='w-36' />
-              </Slider.Slide>              
-              <Slider.Slide>
-                  <img src={DeepmindLogo.src} alt="any4" className='w-36' />
-              </Slider.Slide>
-              <Slider.Slide>
-                  <img src={CambridgeLogo.src} alt="any4" className='w-36' />
-              </Slider.Slide>
-              <Slider.Slide>
-                  <img src={GoogleLogo.src} alt="any5" className='w-36' />
-              </Slider.Slide>
-              <Slider.Slide>
-                  <img src={HarvardLogo.src} alt="any6" className='w-36' />
-              </Slider.Slide>
-              <Slider.Slide>
-                  <img src={MicrosoftLogo.src} alt="any7" className='w-36' />
-              </Slider.Slide>              
-              <Slider.Slide>
-                  <img src={OxfordLogo.src} alt="any8" className='w-36' />
-              </Slider.Slide>
-              <Slider.Slide>
-                  <img src={RevolutLogo.src} alt="any9" className='w-36' />
-              </Slider.Slide>
-              <Slider.Slide>
-                  <img src={NasaLogo.src} alt="any10" className='w-36' />
-              </Slider.Slide>
-              <Slider.Slide>
-                  <img src={SpotifyLogo.src} alt="any11" className='w-36' />
-              </Slider.Slide>              
-              <Slider.Slide>
-                  <img src={StanfordLogo.src} alt="any12" className='w-36' />
-              </Slider.Slide>
-              <Slider.Slide>
-                  <img src={WaymoLogo.src} alt="any14" className='w-36' />
-              </Slider.Slide>
-              <Slider.Slide>
-                  <img src={OpenaiLogo.src} alt="any15" className='w-36' />
-              </Slider.Slide>              
-              <Slider.Slide>
-                  <img src={YcombinatorLogo.src} alt="any16" className='w-36' />
-              </Slider.Slide>              
-              <Slider.Slide>
-                  <img src={YoutubeLogo.src} alt="any17" className='w-36' />
-              </Slider.Slide>
-          </Slider>
+    <div className="justify-center overflow-hidden" style={{background: "black", height: "200px", width: "100%"}}>
+        <p className="align-content text-center text-white pt-2">Previously/currently at</p>
+        <div className="flex justify-center items-center h-full" >
+            <h1 style={{fontSize: "200px"}}>prev at</h1>
+            <Slider
+                width="200px"
+                duration={20}
+                pauseOnHover={false}
+                blurBorders={true}
+                blurBoderColor={'black'}
+            >
+                <Slider.Slide>
+                    <img src={AmazonLogo.src} alt="any" className='w-36' />
+                </Slider.Slide>
+                <Slider.Slide>
+                    <img src={AppleLogo.src} alt="any2" className='w-36' />
+                </Slider.Slide>
+                <Slider.Slide>
+                    <img src={BerkeleyLogo.src} alt="any3" className='w-36' />
+                </Slider.Slide>              
+                <Slider.Slide>
+                    <img src={DeepmindLogo.src} alt="any4" className='w-36' />
+                </Slider.Slide>
+                <Slider.Slide>
+                    <img src={CambridgeLogo.src} alt="any4" className='w-36' />
+                </Slider.Slide>
+                <Slider.Slide>
+                    <img src={GoogleLogo.src} alt="any5" className='w-36' />
+                </Slider.Slide>
+                <Slider.Slide>
+                    <img src={HarvardLogo.src} alt="any6" className='w-36' />
+                </Slider.Slide>
+                <Slider.Slide>
+                    <img src={MicrosoftLogo.src} alt="any7" className='w-36' />
+                </Slider.Slide>              
+                <Slider.Slide>
+                    <img src={OxfordLogo.src} alt="any8" className='w-36' />
+                </Slider.Slide>
+                <Slider.Slide>
+                    <img src={RevolutLogo.src} alt="any9" className='w-36' />
+                </Slider.Slide>
+                <Slider.Slide>
+                    <img src={NasaLogo.src} alt="any10" className='w-36' />
+                </Slider.Slide>
+                <Slider.Slide>
+                    <img src={SpotifyLogo.src} alt="any11" className='w-36' />
+                </Slider.Slide>              
+                <Slider.Slide>
+                    <img src={StanfordLogo.src} alt="any12" className='w-36' />
+                </Slider.Slide>
+                <Slider.Slide>
+                    <img src={WaymoLogo.src} alt="any14" className='w-36' />
+                </Slider.Slide>
+                <Slider.Slide>
+                    <img src={OpenaiLogo.src} alt="any15" className='w-36' />
+                </Slider.Slide>              
+                <Slider.Slide>
+                    <img src={YcombinatorLogo.src} alt="any16" className='w-36' />
+                </Slider.Slide>              
+                <Slider.Slide>
+                    <img src={YoutubeLogo.src} alt="any17" className='w-36' />
+                </Slider.Slide>
+            </Slider>
+        </div>
     </div>
   );
 };

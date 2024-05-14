@@ -1,7 +1,9 @@
 import config from "@/config";
 import ButtonCheckout from "./ButtonCheckout";
-
-import background from "@/app/backgrounds/background5.png"
+import { useRouter } from 'next/router';
+import background from "@/app/backgrounds/background.jpg"
+import FoundenLogoBlack from "@/app/full-logo-white.png"
+import ButtonGradient from "./ButtonGradient";
 
 // <Pricing/> displays the pricing plans for your app
 // It's your Stripe config in config.js.stripe.plans[] that will be used to display the plans
@@ -14,16 +16,19 @@ const Pricing = () => {
       <section className="overflow-hidden" id="pricing">
         <div className="py-24 px-8 max-w-5xl mx-auto">
           <div className="flex flex-col text-center w-full mb-20">
-            <p className="font-medium text-primary mb-8 text-white">Communities</p>
-            <h2 className="font-bold text-brand-yellow text-3xl lg:text-5xl tracking-tight">
+            <h2 className="font-bold text-brand-orange text-3xl lg:text-5xl tracking-tight funky-title">
               Become one of us!
             </h2>
+
+            <p className="font-medium text-primary mb-8 text-white pt-10">            
+                Less than 9% of all applicants make the cut, but you might!
+            </p>
           </div>
 
-          <div className="relative flex justify-center flex-col lg:flex-row items-center lg:items-stretch gap-8">
+          <div className="relative flex justify-center flex-col lg:flex-row items-center lg:items-stretch gap-8 text-white ">
             {config.stripe.plans.map((plan) => (
               <div key={plan.priceId} className="relative w-full max-w-lg">
-                {plan.isFeatured && (
+                {/* {plan.isFeatured && (
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
                     <span
                       className={`badge text-xs text-primary-content font-semibold border-0 bg-primary`}
@@ -31,26 +36,30 @@ const Pricing = () => {
                       POPULAR
                     </span>
                   </div>
-                )}
+                )} */}
 
                 {plan.isFeatured && (
                   <div
-                    className={`absolute -inset-[1px] rounded-[9px] bg-primary z-10`}
+                    className={`absolute -inset-[1px] rounded-[9px] z-10 ${plan.name === "Pioneer" ? 'bg-brand-yellow' : 'bg-brand-orange'}`}
                   ></div>
                 )}
 
-                <div className="relative flex flex-col h-full gap-5 lg:gap-8 z-10 bg-base-100 p-8 rounded-lg">
+                <div className="relative flex flex-col h-full gap-5 lg:gap-8 z-10 bg-black p-8 rounded-lg">
                   <div className="flex justify-between items-center gap-4">
                     <div>
-                      <p className="text-lg lg:text-xl font-bold">{plan.name}</p>
+                      <div className="flex items-center">
+                        <img src={FoundenLogoBlack.src} style={{width: "140px"}}/>
+                        <p className={`text-lg lg:text-xl font-bold pl-3 funky-title ${plan.name === "Pioneer" ? 'text-brand-yellow' : 'text-brand-orange'}`}>
+                         {plan.name}</p>
+                      </div>
                       {plan.description && (
-                        <p className="text-base-content/80 mt-2">
+                        <p className="text-base-content/80 mt-2 text-white">
                           {plan.description}
                         </p>
                       )}
                     </div>
                   </div>
-                  <div className="flex gap-2">
+                  {/* <div className="flex gap-2">
                     {plan.priceAnchor && (
                       <div className="flex flex-col justify-end mb-[4px] text-lg ">
                         <p className="relative">
@@ -69,34 +78,50 @@ const Pricing = () => {
                         USD
                       </p>
                     </div>
-                  </div>
+                  </div> */}
                   {plan.features && (
                     <ul className="space-y-2.5 leading-relaxed text-base flex-1">
                       {plan.features.map((feature, i) => (
                         <li key={i} className="flex items-center gap-2">
+                          {/* CHECK SIGN:
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 20 20"
                             fill="currentColor"
                             className="w-[18px] h-[18px] opacity-80 shrink-0"
-                          >
+                          > 
                             <path
                               fillRule="evenodd"
                               d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
                               clipRule="evenodd"
                             />
+                          </svg> */}
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-[18px] h-[18px] opacity-80 shrink-0">
+                            <rect x="3" y="3" width="18" height="18" rx="3" ry="3" stroke-width="2"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"/>
                           </svg>
+
+                          {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="w-[18px] h-[18px] opacity-80 shrink-0">
+                            <rect x="3" y="3" width="18" height="18" rx="3" ry="3" stroke-width="2"/>
+                          </svg> */}
+
 
                           <span>{feature.name} </span>
                         </li>
                       ))}
                     </ul>
                   )}
-                  <div className="space-y-2">
-                    <ButtonCheckout priceId={plan.priceId} />
-
+                  <div className="space-y-2 flex flex-col items-center justify-center space-y-2">
+                    {/* <ButtonCheckout priceId={plan.priceId} /> */}
+                    <a href="https://airtable.com/appQBG2xFdAqdIJwC/shrhMmElICm9DVjwC">
+                      <ButtonGradient title="Apply"
+                      // onClick={()=> {
+                        // window.location.href = 'https://airtable.com/appQBG2xFdAqdIJwC/shrhMmElICm9DVjwC'
+                      // }
+                      />
+                    </a>
                     <p className="flex items-center justify-center gap-2 text-sm text-center text-base-content/80 font-medium relative">
-                      Pay once. Access forever.
+                      {/* Pay once. Access forever. */}
                     </p>
                   </div>
                 </div>

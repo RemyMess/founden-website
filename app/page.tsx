@@ -8,13 +8,9 @@ import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import FeaturesAccordion from "@/components/FeaturesAccordion";
 import FeaturesAccordionRight from "@/components/FeaturesAccordionRight";
-import FeaturesListicle from "@/components/FeaturesListicle";
+import GlobalLocations from "@/components/GlobalLocations";
+import SelectiveSection from "@/components/SelectiveSection";
 import MembersCarousel from "@/components/MembersCarousel";
-
-
-// import InfiniteSliderCompanies from "@/components/InfiniteSliderCompanies"
-
-
 
 
 import '@/../tailwindcss';
@@ -38,7 +34,8 @@ export default function Home() {
         <MembersCarousel/>
         <FeaturesAccordion/>
         <FeaturesAccordionRight/>
-        <FeaturesListicle/>
+        {/* <GlobalLocations/>
+        <SelectiveSection/> */}
         
         <Pricing />
         {/* <WithWithout/> */}

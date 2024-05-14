@@ -7,8 +7,9 @@ import backgroundImg from "@/app/background.jpg"
 import ButtonGradient from "@/components/ButtonGradient";
 import TextTransition, { presets } from 'react-text-transition';
 import ButtonLead from "@/components/ButtonLead";
-
 import Globe from './Globe'
+
+import globalFoundenImg from "@/app/worldwide-founden.svg"
 
 const TEXTS = ['Work harder with', 'Play harder with', 'Be challenged by', 'Scale faster with', 'Make friends with', 'Hire friends of', 'Play poker with', 'Play LoL with', 'Raise funds from', 'Play Catan with', 'Found ventures with', 'Get advice from', 'Play Paintball with'];
 
@@ -63,18 +64,17 @@ const Hero = () => {
           <h1 className="font-extrabold text-4xl lg:text-6xl tracking-tight md:-mb-4 text-orange-500" style={{ fontFamily: 'VT323, monospace' }}> */}
 
           <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Gloria+Hallelujah&family=Londrina+Outline&family=Press+Start+2P&family=Rubik+Doodle+Shadow&family=VT323&display=swap" rel="stylesheet"/>
-          <h1 className="font-extrabold text-4xl lg:text-6xl tracking-tight md:-mb-4 text-orange-500" style={{ fontFamily: 'Gloria Hallelujah, cursive' }}>
+          <h1 className="font-extrabold text-4xl lg:text-6xl tracking-tight md:-mb-4 text-brand-orange" style={{ fontFamily: 'Gloria Hallelujah, cursive' }}>
             {/* Work harder, play harder alongside exceptional founders. */}
             <TextTransition inline={true} springConfig={presets.wobbly}>{TEXTS[index % TEXTS.length]}</TextTransition> insane founders.
             {/* Hang out with exceptioal founders */}
           </h1>
           <p className="text-lg opacity-80 leading-relaxed" style={{color: "white"}}>
-            Join a highly curated network of ambitious founders & operators - we work hard during the day, we recover during the night.
+            Join a curated community of exceptional founders centred around friendships & games - we work harder during the day, we play harder during the night.
           {/* Founden (Founders' Den) is a curated community of ambitious founders & operators from all backgrounds who share huge visions, bias to action, and a radically collaborative approach centered around friendships. */}
           </p>
           {/* <ButtonGradient title={"Join us!"}/> */}
-
-          <ButtonLead text={"Hang out with us"}/>
+            <ButtonLead text={"Hang out with us"}/>
           
           {/* <button className="btn-gradient btn-primary btn-wide">
             Join {config.appName}
@@ -87,14 +87,14 @@ const Hero = () => {
         <div className="lg:w-full">
 
           {/* <Globe/> */}
-          {/* <Image
-            src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80"
+          <Image
+            src={globalFoundenImg}
             alt="Product Demo"
             className="w-full"
             priority={true}
             width={500}
             height={500}
-          /> */}
+          />
         </div>
       </section>
   );

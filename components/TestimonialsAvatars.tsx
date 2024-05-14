@@ -1,25 +1,34 @@
 import Image from "next/image";
+import MaithamProfile from "@/app/foundersProfilePic/maitham.jpeg"
+import AndreaProfile from "@/app/foundersProfilePic/andrea.jpeg"
+import RossProfile from "@/app/foundersProfilePic/ross.jpeg"
+import Sophia from "@/app/foundersProfilePic/sonia.jpeg"
+import Maitham from "@/app/foundersProfilePic/andrea.jpeg"
+
+
+
+
 
 const avatars: {
   alt: string;
   src: string;
 }[] = [
   {
-    alt: "User",
+    alt: "Maitham",
     // Ideally, load from a statically generated image for better SEO performance (import userImage from "@/public/userImage.png")
-    src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3276&q=80",
+    src: MaithamProfile.src,
   },
   {
-    alt: "User",
-    src: "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+    alt: "Andrea",
+    src: AndreaProfile.src,
   },
   {
-    alt: "User",
-    src: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+    alt: "Ross",
+    src: RossProfile.src,
   },
   {
-    alt: "User",
-    src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+    alt: "Sophia",
+    src: Sophia.src,
   },
   {
     alt: "User",
@@ -46,8 +55,8 @@ const TestimonialsAvatars = ({ priority }: { priority?: boolean }) => {
       </div>
 
       {/* RATING */}
-      <div className="flex flex-col justify-center items-center md:items-start gap-1">
-        <div className="rating">
+      <div className="flex flex-col justify-center mt-3 items-center md:items-start gap-1">
+        {/* <div className="rating">
           {[...Array(5)].map((_, i) => (
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +72,7 @@ const TestimonialsAvatars = ({ priority }: { priority?: boolean }) => {
               />
             </svg>
           ))}
-        </div>
+        </div> */}
 
         <div className="text-base text-base-content/80" style={{color: "white"}}>
           <span className="font-semibold text-base-content" style={{color: "white"}}>1000+</span> of us raised <span className="font-semibold text-base-content" style={{color: "white"}}>$500M+</span>

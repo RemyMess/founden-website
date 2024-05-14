@@ -1,14 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import config from "@/config";
-import logo from "@/app/icon.png";
+import logo from "@/app/full-logo-white.png";
+import background from "@/app/backgrounds/background3.png"
 
 // Add the Footer to the bottom of your landing page and more.
 // The support link is connected to the config.js file. If there's no config.mailgun.supportEmail, the link won't be displayed.
 
 const Footer = () => {
   return (
-    <footer className="bg-base-200 border-t border-base-content/10">
+    <footer className="border-t border-base-content/10" style={{backgroundImage: `url(${background.src})`}}>
       <div className="max-w-7xl mx-auto px-8 py-24">
         <div className=" flex lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
           <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
@@ -21,29 +22,29 @@ const Footer = () => {
                 src={logo}
                 alt={`${config.appName} logo`}
                 priority={true}
-                className="w-6 h-6"
-                width={24}
-                height={24}
+                // className="w-6 h-6"
+                width={100}
+                height={100}
               />
-              <strong className="font-extrabold tracking-tight text-base md:text-lg">
+              {/* <strong className="font-extrabold tracking-tight text-base md:text-lg text-white">
                 {config.appName}
-              </strong>
+              </strong> */}
             </Link>
 
-            <p className="mt-3 text-sm text-base-content/80">
+            <p className="mt-3 text-sm text-base-content/80 text-white text-opacity-75">
               {config.appDescription}
             </p>
-            <p className="mt-3 text-sm text-base-content/60">
+            <p className="mt-3 text-sm text-base-content/60 text-white text-opacity-75">
               Copyright © {new Date().getFullYear()} - All rights reserved
             </p>
           </div>
           <div className="flex-grow flex flex-wrap justify-center -mb-10 md:mt-0 mt-10 text-center">
             <div className="lg:w-1/3 md:w-1/2 w-full px-4">
-              <div className="footer-title font-semibold text-base-content tracking-widest text-sm md:text-left mb-3">
+              <div className="footer-title font-semibold text-base-content tracking-widest text-sm md:text-left mb-3 text-white text-opacity-75">
                 LINKS
               </div>
 
-              <div className="flex flex-col justify-center items-center md:items-start gap-2 mb-10 text-sm">
+              <div className="flex flex-col justify-center items-center md:items-start gap-2 mb-10 text-sm text-white text-opacity-75">
                 {config.mailgun.supportEmail && (
                   <a
                     href={`mailto:${config.mailgun.supportEmail}`}
@@ -55,19 +56,19 @@ const Footer = () => {
                   </a>
                 )}
                 <Link href="/#pricing" className="link link-hover">
-                  Pricing
+                  Applications
                 </Link>
-                <Link href="/blog" className="link link-hover">
+                {/* <Link href="/blog" className="link link-hover">
                   Blog
                 </Link>
                 <a href="/#" target="_blank" className="link link-hover">
                   Affiliates
-                </a>
+                </a> */}
               </div>
             </div>
 
-            <div className="lg:w-1/3 md:w-1/2 w-full px-4">
-              <div className="footer-title font-semibold text-base-content tracking-widest text-sm md:text-left mb-3">
+            <div className="lg:w-1/3 md:w-1/2 w-full px-4 text-white text-opacity-75">
+              <div className="footer-title font-semibold tracking-widest text-sm md:text-left mb-3 text-white text-opacity-75">
                 LEGAL
               </div>
 

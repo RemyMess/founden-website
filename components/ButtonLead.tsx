@@ -21,12 +21,17 @@ const ButtonLead = ({ extraStyle, text }: { extraStyle?: string, text?: string }
     try {
       await apiClient.post("/lead", { email });
 
-      toast.success("You're in - now apply & become a member!");
+      toast.success("Redirecting you to application portal.");
 
       // just remove the focus on the input
       inputRef.current.blur();
       setEmail("");
       setIsDisabled(true);
+
+      // Redirect the user to a new website
+      setTimeout(() => {
+        window.location.href = "https://airtable.com/appQBG2xFdAqdIJwC/shrhMmElICm9DVjwC"; // Replace with the desired URL
+      }, 2000);
     } catch (error) {
       console.log(error);
     } finally {
@@ -75,7 +80,6 @@ const ButtonLead = ({ extraStyle, text }: { extraStyle?: string, text?: string }
           </svg>
         )}
       </button> */}
-
       <button
         className="btn btn-gradient animate-shimmer text-dark hover:bg-yellow-300 btn-block"
         type="submit"

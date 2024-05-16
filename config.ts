@@ -59,7 +59,7 @@ const config = {
           {
             name: "All requirements from 'Founden Pioneer'",
           },
-          { name: "Raised at least 1M+ OR exited a business for at least 5 digits" },
+          { name: "Raised at least 1M+ OR 6-digit exit OR reached 1M ARR" },
           // { name: "" },
         ],
       },

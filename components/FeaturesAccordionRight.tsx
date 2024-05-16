@@ -8,9 +8,13 @@ import background from "@/app/backgrounds/background3.png"
 import globalFoundenEvents from "@/app/worldwide-founden.svg"
 import retreatFoundenImage from "@/app/Retreat Images.svg"
 
-// import pokerVideo from "@/app/poker.mp4"
 import discordImageFounden from "@/app/discord-gaming.svg"
 
+const equinoxVideoPath = "https://jumpshare.com/embed/Zg4muti3JVMBVhjc5aLX"
+const equinoxVideoPath2 = "https://pouch.jumpshare.com/preview/Kc8Gj_F-XsTCPLll8e8zUBbeVW8D4ol20GLLuaBxjvnRIkBuPHR_gM4PT4Fe_WWSx121zUxmap92u1xXs4HgLt8JDTLQMgFJvKtCYs2O4Og"
+// const pokerVideoPath = "https://pouch.jumpshare.com/preview/Y3ltXiphXO3Lu2pF-zwtMKxysGmr32dfuumOwTj_SzXJBK3pwdNshWggLpsAv-kAx121zUxmap92u1xXs4HgLviClLz2_7DcbvKN2yOmAJU"
+const pokerVideoPath = "https://pouch.jumpshare.com/preview/Y3ltXiphXO3Lu2pF-zwtMKxysGmr32dfuumOwTj_SzXJBK3pwdNshWggLpsAv-kAP_mGmBu9lZb9igUzj2GVvGChUd7cNMZHArWOyZyhILI"
+const testPath = "https://upload.wikimedia.org/wikipedia/commons/transcoded/8/87/Schlossbergbahn.webm/Schlossbergbahn.webm.1080p.vp9.webm"
 
 interface Feature {
   title: string;
@@ -31,14 +35,13 @@ interface Feature {
 // - alt: The alt text of the image (if type is 'image')
 const features = [
   {
-    title: "We recharge & play games online",
+    title: "We meet, have food, and workout IRL",
     description:
-      "Want to relax your mind & play a video game (e.g League of Legends) with likeminded fellows? We got you 24/7. Jump in our online gaming room (aka Discord server) and you'll find us recharging.",
-    type: "image",
-    // path: "https://d3m8mk7e1mf7xn.cloudfront.net/app/newsletter.webm",
-    // path: foodAndGymVideo,
-    path: discordImageFounden.src,
+      "Restaurants, VR games, comedy, pubs - anything any of us fancy trying in the city, we give it a go!",
+    type: "video",
     format: "video/webm",
+    path: equinoxVideoPath2,
+    alt: "A computer",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -50,18 +53,19 @@ const features = [
       >
         <path
           strokeLinecap="round"
-          d="M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 10-2.636 6.364M16.5 12V8.25"
+          strokeLinejoin="round"
+          d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
         />
       </svg>
     ),
   },
   {
-    title: "We play poker & board-games",
+    title: "We hang out & play boardgames IRL",
     description:
       "The dominating majority of us are suckers for boardgames & poker. We play both online & IRL, wherever Foundeners are!",
     type: "video",
     format: "video/webm",
-    path: "https://file.notion.so/f/f/8be72a2f-3d52-4dcc-8d3b-c86624d1b2f6/4eac4ddf-5838-4310-8597-f2a632cd2ced/poker.mp4?id=d6ff5b75-5b7c-4c04-a6d0-84a150c2239a&table=block&spaceId=8be72a2f-3d52-4dcc-8d3b-c86624d1b2f6&expirationTimestamp=1715709600000&signature=91KgwOtrjFnSYtZwlQiZu0QXCEj4PytCiO6eLgAFSWM",
+    path: pokerVideoPath,
     alt: "A computer",
     svg: (
       <svg
@@ -81,13 +85,15 @@ const features = [
     ),
   },
   {
-    title: "We do cultural excursions",
+    title: "We play video games online",
     description:
-      "Restaurants, VR games, comedy, pubs - anything any of us fancy trying in the city, we give it a go!",
-    type: "video",
-    format: "video/webm",
-    path: "https://file.notion.so/f/f/8be72a2f-3d52-4dcc-8d3b-c86624d1b2f6/cff88ae2-f3b5-47c4-a0f6-cc87969182c9/equinox-out-video.webm?id=ffb8299c-d4ca-4789-825e-3bfb8760c0fc&table=block&spaceId=8be72a2f-3d52-4dcc-8d3b-c86624d1b2f6&expirationTimestamp=1715709600000&signature=L1c4GLO8ilsvroI80ECIRkBd2c67OFunns1T0IMyWE0",
-    alt: "A computer",
+      "Want to relax your mind & play a video game (e.g League of Legends) with likeminded fellows? We got you 24/7. Jump in our online gaming room (aka Discord server) and you'll find us recharging.",
+    type: "image",
+    // path: "https://d3m8mk7e1mf7xn.cloudfront.net/app/newsletter.webm",
+    // path: foodAndGymVideo,
+    path: discordImageFounden.src,
+    alt: "recharge",
+    // format: "video/webm",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -99,8 +105,7 @@ const features = [
       >
         <path
           strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+          d="M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 10-2.636 6.364M16.5 12V8.25"
         />
       </svg>
     ),

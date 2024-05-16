@@ -81,10 +81,16 @@ interface FounderCardProps {
 
 const FounderCard: React.FC<FounderCardProps> = ({name, role, workDescription, profilePicture, gamesDescription }) => {
   return (
-    <div className={`card card-side bg-base-100 shadow-xl ${window.innerWidth <= 768 ? 'h-240' : 'h-64'}`}>
-      <figure className="w-2/5 h-auto flex-shrink-0">
-          <img src={profilePicture.src} alt={name} className="h-full w-full object-cover"/>
-      </figure>
+    <div className={`card card-side bg-base-100 shadow-xl ${window.innerWidth <= 768 ? 'h-240 flex flex-col' : 'h-64 flex-row'}`}>
+      {window.innerWidth <= 768 ? (
+          <figure className="w-full h-auto">
+            <img src={profilePicture.src} alt={name} className="h-64 w-full object-cover"/>
+          </figure>
+        ) : (
+          <figure className="w-2/5 h-auto flex-shrink-0">
+            <img src={profilePicture.src} alt={name} className="h-full w-full object-cover"/>
+          </figure>
+        )}
       <div className="card-body">
           <h2 className="card-title text-md">{name}</h2>
           <p className="text-base sm:font-semibold">{role}</p>
@@ -154,7 +160,7 @@ const FounderProfiles = [
     role: "Co-founder at Kaikaku",
     profilePicture: JosefChen,
     workDescription: "2x exited founder, now building robotic restaurants with the Ex-CDO of Subway, Ex-CSO of Mars Inc, & Ex-MD of Caffè Nero.",
-    gamesDescription: "Foody"
+    gamesDescription: "Foody, gamer"
   },
   {
     name: "Ross Murphy",
@@ -175,14 +181,14 @@ const FounderProfiles = [
     role: "Co-founder/CEO at Arda Biomaterials",
     profilePicture: BrettCotten,
     workDescription: "Ex-Cambridge grad, EF alumnus, book author who raised ~$2M to tranform beer waste into leather.",
-    gamesDescription: "xxxxx"
+    gamesDescription: "Foody, running"
   },
   {
     name: "Sophia Rahman",
     role: "Co-founder/CEO at Stealth",
     profilePicture: SophiaRahman,
     workDescription: "Ex-Cambridge grad who recently raised 7 digits in stealth 🤫.",
-    gamesDescription: "xxxxx"
+    gamesDescription: "Boardgames, foody, running"
   },
   {
     name: "Miraan Tabrez",
@@ -268,7 +274,7 @@ export default function App() {
             modules={[Autoplay, Pagination, Navigation]}
             // onAutoplayTimeLeft={onAutoplayTimeLeft}
             className="mySwiper"
-            style={{height: "300px"}}
+            style={window.innerWidth <= 768 ? {height: "550px"} : {height: "300px"}}
           >
             {FounderProfiles.map((profile, i) => (
               <SwiperSlide key={i}>

@@ -56,6 +56,7 @@ const features = [
       "We've all signed the Founden pact - a promise to empower each other to get them closer to success. A win for one of us = a new resource for everybody else.",
     type: "video",
     path: "https://file.notion.so/f/f/8be72a2f-3d52-4dcc-8d3b-c86624d1b2f6/1368f3aa-c2d5-4dbf-a5e9-8fb75afe951a/Untitled.mp4?id=f41568be-35f5-4709-89aa-6c193a561094&table=block&spaceId=8be72a2f-3d52-4dcc-8d3b-c86624d1b2f6&expirationTimestamp=1715716800000&signature=ZkrhCZ3tCqS5cS98uIIyQBaacmNGV-PcIgYIKpuewkc",
+
     format: "video/webm",
     svg: (
       <svg

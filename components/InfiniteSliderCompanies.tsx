@@ -59,7 +59,7 @@ const InfiniteSliderCompanies = () => {
                             x: ['0%', '-1000%'],
                             transition: {
                                 ease: 'linear',
-                                duration: 50,
+                                duration: 80,
                                 repeat: Infinity,
                             }
                         }}

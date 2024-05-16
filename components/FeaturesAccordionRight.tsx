@@ -251,7 +251,7 @@ const FeaturesAccordionRight = () => {
         >
             <div className="px-8 text-right">
                 <h2 className="funky-title text-brand-orange font-extrabold text-4xl lg:text-5xl tracking-tight mb-6 md:mb-24">
-                ... and play harder together
+                ... and <u>play harder</u> together
                 <div><b>during the night.</b></div>
                 </h2>
                 <div className=" flex flex-col md:flex-row-reverse gap-12 md:gap-24">

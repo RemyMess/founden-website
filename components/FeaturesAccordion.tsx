@@ -229,7 +229,7 @@ const FeaturesAccordion = () => {
       >
         <div className="px-8">
           <h2 className="funky-title text-brand-purple font-extrabold text-4xl lg:text-5xl tracking-tight mb-6 md:mb-24">
-            We work harder together
+            <u>We work harder</u> together
             <div><b>during the day...</b></div>
             {/* <span className="bg-neutral text-neutral-content px-2 leading-snug md:px-4 ml-0 md:ml-1.5 leading-relaxed whitespace-nowrap">
               during the day

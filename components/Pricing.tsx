@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import background from "@/app/backgrounds/background.jpg"
 import FoundenLogoBlack from "@/app/full-logo-white.png"
 import ButtonGradient from "./ButtonGradient";
+import ButtonLead from "./ButtonLead";
 
 // <Pricing/> displays the pricing plans for your app
 // It's your Stripe config in config.js.stripe.plans[] that will be used to display the plans
@@ -111,19 +112,11 @@ const Pricing = () => {
                       ))}
                     </ul>
                   )}
-                  <div className="space-y-2 flex flex-col items-center justify-center space-y-2">
-                    {/* <ButtonCheckout priceId={plan.priceId} /> */}
-                    <a href="https://airtable.com/appQBG2xFdAqdIJwC/shrhMmElICm9DVjwC">
-                      <ButtonGradient title="Apply"
-                      // onClick={()=> {
-                        // window.location.href = 'https://airtable.com/appQBG2xFdAqdIJwC/shrhMmElICm9DVjwC'
-                      // }
-                      />
-                    </a>
-                    <p className="flex items-center justify-center gap-2 text-sm text-center text-base-content/80 font-medium relative">
-                      {/* Pay once. Access forever. */}
-                    </p>
+                  <div className="flex justify-center">
+                    <ButtonLead text={"Hang out with us"}/>
                   </div>
+
+
                 </div>
               </div>
             ))}

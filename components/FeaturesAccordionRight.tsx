@@ -199,7 +199,7 @@ const Media = ({ feature }: { feature: Feature }) => {
   if (type === "video") {
     return (
       <video
-        className={style + "rounded-full"}
+        className={style + "rounded-full object-cover overflow-hidden"}
         autoPlay
         muted
         loop

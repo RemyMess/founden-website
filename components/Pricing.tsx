@@ -112,7 +112,7 @@ const Pricing = () => {
                       ))}
                     </ul>
                   )}
-                  <div className="flex justify-center">
+                  <div className="flex justify-center text-black">
                     <ButtonLead text={"Hang out with us"}/>
                   </div>
 

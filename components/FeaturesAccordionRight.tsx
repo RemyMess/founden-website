@@ -10,11 +10,8 @@ import retreatFoundenImage from "@/app/Retreat Images.svg"
 
 import discordImageFounden from "@/app/discord-gaming.svg"
 
-const equinoxVideoPath = "https://jumpshare.com/embed/Zg4muti3JVMBVhjc5aLX"
-const equinoxVideoPath2 = "https://pouch.jumpshare.com/preview/Kc8Gj_F-XsTCPLll8e8zUBbeVW8D4ol20GLLuaBxjvnRIkBuPHR_gM4PT4Fe_WWSx121zUxmap92u1xXs4HgLt8JDTLQMgFJvKtCYs2O4Og"
-// const pokerVideoPath = "https://pouch.jumpshare.com/preview/Y3ltXiphXO3Lu2pF-zwtMKxysGmr32dfuumOwTj_SzXJBK3pwdNshWggLpsAv-kAx121zUxmap92u1xXs4HgLviClLz2_7DcbvKN2yOmAJU"
-const pokerVideoPath = "https://pouch.jumpshare.com/preview/Y3ltXiphXO3Lu2pF-zwtMKxysGmr32dfuumOwTj_SzXJBK3pwdNshWggLpsAv-kAP_mGmBu9lZb9igUzj2GVvGChUd7cNMZHArWOyZyhILI"
-const testPath = "https://upload.wikimedia.org/wikipedia/commons/transcoded/8/87/Schlossbergbahn.webm/Schlossbergbahn.webm.1080p.vp9.webm"
+const equinoxVideoPath = "https://founden-website-assets.s3.eu-north-1.amazonaws.com/equinox-out-video.webm"
+const pokerVideoPath = "https://founden-website-assets.s3.eu-north-1.amazonaws.com/pokerFounden.webm"
 
 interface Feature {
   title: string;
@@ -40,7 +37,7 @@ const features = [
       "Restaurants, VR games, comedy, pubs - anything any of us fancy trying in the city, we give it a go!",
     type: "video",
     format: "video/webm",
-    path: equinoxVideoPath2,
+    path: equinoxVideoPath,
     alt: "A computer",
     svg: (
       <svg
